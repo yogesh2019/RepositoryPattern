@@ -22,4 +22,19 @@ in future if you decide to change, you can do with minimal impact on your app
 
 
 
-*******************
+******************* 2 Repository Overview
+
+now repository should act like a collection of object in memory
+
+so we have methods to add and remove an object
+get object by id
+
+GetAll(param1, param2)
+GetFirstOrDefault(param1, param2)
+Add(obj)
+Remove(obj)
+
+we should not implement method in repository
+
+now for update and save, we something called unit of work
+
