@@ -38,3 +38,49 @@ we should not implement method in repository
 
 now for update and save, we something called unit of work
 
+***************** Repository Pattern Detailed Flow
+
+The unit of work class coordinates the work of multiple repositories
+by create a single dbContext class shared by all of them
+
+A unit of work maintains a list of objects affected by a business transaction and coordinates the writing out of the changes
+
+the controller interacts with the unit of work, which has all the repository
+
+and it will untimately interact with Entity
+
+now the benefit you see here is 
+
+there is a common dbContext for our repository pattern
+
+without unit of work there will be separate dbContext
+
+
+many argues that this is already implemented in Entity framwork,
+DbSEt					DbContext
+
+Add(obj)				DbSet
+Remove(obj)				DbSet
+Find(id)				DbSet
+FirstOrDefault			Savechanges()
+repository             unit of work
+
+as we can see that this is implemented in terms of repository pattern and units of work
+
+but there is a problem lets go back to our ex
+
+what happens when you have to repeat the query in multiple places 
+
+so in this case , we want a repository that has a method dropdown, so we can minimize the duplication of logic	
+
+
+
+now the other adv is it decouples your application from persistence framework,
+
+when you are using Dbset and DbContext directly in your application
+Entity framework is tighlty coupled
+
+and what if you want to use a different orm
+
+repository pattern is not recommended if we have strict time line
+
