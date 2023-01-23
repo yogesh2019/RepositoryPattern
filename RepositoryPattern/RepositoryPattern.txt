@@ -1,0 +1,25 @@
+﻿was first driven as a part of domain driven design in 2004
+
+it provides an abstraction of data
+
+it helps to provide loose coupling
+benefit is to minimize duplication of logic
+
+lets understand with the help of an example
+
+let say you have requirement to display list of candidate
+
+traditional approach: _db.Category.Select(i => new SelectListItem(){Text = i.Name, Value = i.Id.toString()})
+
+repository approach
+
+var categorySelectList = _repository.GetCategoryListForDropDown();
+
+2. it decouples your application from persistance framework
+
+in future if you decide to change, you can do with minimal impact on your app
+
+
+
+
+*******************
